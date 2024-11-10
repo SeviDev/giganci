@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodingGiants</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #left-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: rgb(237, 127, 44);
+            position: relative;
+            padding: 0;
+        }
+
+        #right-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        #login-button {
+            background-color: orange;
+            color: white;
+            border: 0;
+            padding: 15px 25px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        #login-button:hover {
+            background-color: darkorange;
+        }
+
+        .input-container {
+            position: relative;
+            width: 470px;
+            margin: 10px 0;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+            height: 50px;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .eye-icon:hover {
+            transform: scale(2.0);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #uczniowie {
+            height: auto;
+            max-height: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #logo {
+            max-width: 250px;
+            max-height: 340px;
+            margin: 0;
+        }
+
+        .register-link {
+            margin-top: 10px;
+            font-size: 16px;
+            color: darkorange;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .notification {
+            margin-top: 10px;
+            color: darkorange;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div id="left-box">
+        <img id="logo" src="C:\\Users\\13-19lat\\Downloads\\Szablon_strony\\logo.png" alt="Logo Gigantów programowania">
+        <img id="uczniowie" src="C:\\Users\\13-19lat\\Downloads\\Szablon_strony\\uczniowie.png" alt="Grafika przedstawiająca kilku siedzących razem uczniów">
+    </div>
+    
+    <div id="right-box">
+        <form>
+            <h1 style="font-family: fantasy">Zaloguj się do serwisu</h1>
+            <input class="input" type="text" placeholder="Twój adres email">
+            
+            <div class="input-container">
+                <input class="input" id="password" type="password" placeholder="Hasło">
+                <img class="eye-icon" id="togglePassword" src="C:\\Users\\13-19lat\\Downloads\\Szablon_strony\\oko.jpg" alt="Pokaż hasło" width="20">
+            </div>
+
+            <p class="notification">Nie jesteś naszym uczniem?</p>
+            <p class="register-link">Kliknij tutaj i zapisz się na zajęcia!</p>
+
+            <button id="login-button" type="submit">Zaloguj się</button>
+        </form>
+    </div>
+    
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.src = type === 'password' ? 'C:\\Users\\13-19lat\\Downloads\\Szablon_strony\\oko.jpg' : 'C:\\Users\\13-19lat\\Downloads\\Szablon_strony\\oko.jpg'; // Zmień na odpowiednie ścieżki
+        });
+    </script>
+</body>
+</html>
